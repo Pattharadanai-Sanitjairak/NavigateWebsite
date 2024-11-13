@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navigate to URL</title>
+</head>
+<body>
+    <input type="text" id="urlInput" placeholder="Enter URL" style="width: 300px;">
+    <button onclick="navigateToUrl()">Go</button>
+
+    <script>
+        function navigateToUrl() {
+            const url = document.getElementById("urlInput").value;
+            if (url) {
+                // Check if the URL has a scheme, add "http://" if not
+                const formattedUrl = url.startsWith("http://") || url.startsWith("https://") ? url : `http://${url}`;
+                window.location.href = formattedUrl;
+            } else {
+                alert("Please enter a URL.");
+            }
+        }
+    </script>
+</body>
+</html>
